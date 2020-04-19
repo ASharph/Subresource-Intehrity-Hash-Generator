@@ -7,6 +7,10 @@ using System.Text;
 
 namespace SubresourceIntehrityTools
 {
+    /// <summary>
+    /// Contains methods that simplify creation of subresource integrity hash 
+    /// from the external file.
+    /// </summary>
     public static class SubresourceIntegrityUtility
     {
         public static string GenerateHashSha256(string text)
@@ -33,6 +37,12 @@ namespace SubresourceIntehrityTools
             return "sha512-" + Convert.ToBase64String(byteArray);
         }
 
+        /// <summary>
+        /// Get a script text from an internal .js file.
+        /// </summary>
+        /// <param name="url">Url of the external resource.</param>
+        /// <param name="isCorsHeaderPresented">Out parameter defines wtheder  CORS filter exists in the external script.</param>
+        /// <returns>Code from external file as a <see cref="string"/>.</returns>
         public static string GetExternalScriptText(string url, out bool isCorsHeaderPresented)
         {
             isCorsHeaderPresented = true;

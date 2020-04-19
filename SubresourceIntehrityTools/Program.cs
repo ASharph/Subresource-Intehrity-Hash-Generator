@@ -10,7 +10,7 @@ namespace SubresourceIntehrityTools
 
             if(!isCorsHeaderPresented)
             {
-                Console.WriteLine("Access-Control-Allow-Origin does not exist in the external file. Subresource integrity cannot properly work with this script.");
+                Console.WriteLine("Access-Control-Allow-Origin header does not exist in the external file. Subresource integrity cannot properly work with this script.");
             }
 
             Console.WriteLine(SubresourceIntegrityUtility.GenerateHashSha256(fileText));
